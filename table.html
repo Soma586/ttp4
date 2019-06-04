@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class = "dropcontainer">
+        <button id = "btn">Colors</button>
+        <div class = "dropcontent">
+            <p>blue</p>
+            <p>red</p>
+            <p id = "orange">orange</p>
+            <button id = "purp"> purple</button>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <h1>Grid</h1>
+
+
+    <table>
+        <tr id = "row">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr class = "row">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+
+    <script>
+        document.getElementById("row").addEventListener("click", function(){
+            document.getElementById("row").style.backgroundColor = currentColor;
+
+        });
+        
+        var currentColor = "";
+
+
+
+        document.getElementById("purp").addEventListener("click", function(){
+            currentColor = document.getElementById("purp").innerHTML;
+            //console.log(currentColor);
+        });
+
+        document.getElementById("orange").addEventListener("click", function(){
+            currentColor = document.getElementById("orange").innerHTML;
+
+        });
+        
+                
+                        //document.getElementById("")
+        
+    
+    
+    </script>
+    
+</body>
+</html>

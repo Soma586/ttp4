@@ -1,0 +1,55 @@
+h1{
+
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /*border : 2px solid black; */
+    background-color: none;
+}
+
+.item{
+    border : 2px solid ;
+    text-align : center;
+    padding : 20px;
+}
+
+
+/***table***/
+
+td{
+    border :solid;
+    padding : 30px;
+}
+
+#btn{
+    border : none;
+    background: green;
+    border-radius: 4px;
+    padding : 10px;
+
+}
+
+
+.dropcontent{
+    display: none;
+    text-align: center;
+
+}
+
+.dropcontainer{
+    position: relative;
+    display:inline-block;
+}
+
+
+/*might want to change it to button instead of p*/
+.dropcontent p:hover{
+    background-color : gray;
+}
+
+
+
+.dropcontainer:hover .dropcontent{display: block}
+
