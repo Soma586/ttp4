@@ -12,8 +12,8 @@
     <div class = "dropcontainer">
         <button id = "btn">Colors</button>
         <div class = "dropcontent">
-            <p>blue</p>
-            <p>red</p>
+           <!-- <p>blue</p>-->
+          <!--  <p>red</p> -->
             <p id = "orange">orange</p>
             <button id = "purp"> purple</button>
 
@@ -27,28 +27,106 @@
 
     <h1>Grid</h1>
 
+    <div id = "btn-container">
+        <button id = "rowbtn" onclick="addRow()">add row</button>
+        <button id = "colbtn" onclick= "addCol()">add col</button>
+        <button onclick="deleteRow()">remove row</button>
+        <button >remove col</button>
 
-    <table>
+
+        <button onclick ="fillRest()">fill rest</button>
+        <button onclick="fillAll()">fill all</button>
+        <button onclick= "empty()">clear</button>
+
+    </div>
+
+
+    <table id = "table">
         <tr id = "row">
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+            <td  onclick = "select(this)" ></td>
+            <td onclick = "select(this)"></td>
+            <td onclick = "select(this)"></td>
         </tr>
-        <tr class = "row">
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
+        
     </table>
 
 
     <script>
-        document.getElementById("row").addEventListener("click", function(){
-            document.getElementById("row").style.backgroundColor = currentColor;
-
-        });
+        // document.getElementById("row").addEventListener("click", function(){
+        //     document.getElementById("row").style.backgroundColor = currentColor;
+        function select(x){
         
+        //let table = document.getElementById("table");
+        let element = document.querySelectorAll("td");
+        element[x.cellIndex].style.backgroundColor = currentColor;
+        }
+
+        var rnum = 1;
+        var cnum = 3;
+
+        let addRow = () =>{
+            let table = document.getElementById("table");
+
+            var row = table.insertRow(rnum);
+            rnum++;
+            //var cell1 = row.insertCell(0);
+            //var cell2 = row.insertCell(1);
+
+            for(var i = 0; i < cnum; i++){
+                row.insertCell(i);
+            }
+
+        }
+
+        let addCol = () =>{
+            let row = document.getElementById("row");
+            var x = row.insertCell(-1);
+            cnum++;
+
+        }
+        let fillRest = () =>{
+            let element = document.querySelectorAll("td");
+
+            for(var i = 0; i < element.length; i++){
+                //if(element[i].style.backgroundColor === "white"){
+                    console.log("the result is true");
+                    element[i].style.backgroundColor = currentColor;
+              //  }
+            }
+
+        }
+        let deleteRow = () =>{
+            //let table = document.getElementById("table");
+            document.getElementById("table").deleteRow(0);
+            rnum--;
+        }
+
+
+
+        let fillAll = () =>{
+            let element = document.querySelectorAll("td");
+
+            for (let i = 0; i < element.length; i++) {
+                element[i].style.backgroundColor = currentColor;
+                
+            }
+        
+        }
+
+        let empty = () =>{
+            let element = document.querySelectorAll("td");
+
+            for (let i = 0; i < element.length; i++) {
+                element[i].style.backgroundColor = "white";
+                
+            }
+
+        }
         var currentColor = "";
+
+        document.querySelectorAll("td").forEach(e => e.addEventListener('click', function(){
+            alert("testing");
+        }));
 
 
 
